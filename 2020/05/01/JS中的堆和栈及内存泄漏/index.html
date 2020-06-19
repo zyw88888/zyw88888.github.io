@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -81,12 +81,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="指尖艺术家の博客">
-<meta property="og:url" content="http://yoursite.com/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/index.html">
+<meta name="description" content="JS中的堆和栈及内存泄漏一、栈 从电脑内存中分配一块出来，用来执行代码的内存，Stack先创建变量，再做赋值操作分配一个主线程来自上而下执行。（js单线程，浏览器多线程）主要用来运行代码，和存储基本类型。  1.基本数据类型储存   变量存储空间，存创建的变量   值存储空间，存基本数据类型的值 一个值存储空间可以对应多个变量，一个变量只能对应一个值存储空间。    2.说明 栈内存：是一个执行代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中的堆和栈及内存泄漏">
+<meta property="og:url" content="http://yoursite.com/2020/05/01/JS%E4%B8%AD%E7%9A%84%E5%A0%86%E5%92%8C%E6%A0%88%E5%8F%8A%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/index.html">
 <meta property="og:site_name" content="指尖艺术家の博客">
+<meta property="og:description" content="JS中的堆和栈及内存泄漏一、栈 从电脑内存中分配一块出来，用来执行代码的内存，Stack先创建变量，再做赋值操作分配一个主线程来自上而下执行。（js单线程，浏览器多线程）主要用来运行代码，和存储基本类型。  1.基本数据类型储存   变量存储空间，存创建的变量   值存储空间，存基本数据类型的值 一个值存储空间可以对应多个变量，一个变量只能对应一个值存储空间。    2.说明 栈内存：是一个执行代">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200619133937709.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200619134027276.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-05-01T02:10:09.000Z">
+<meta property="article:modified_time" content="2020-06-19T05:55:10.389Z">
 <meta property="article:author" content="邹裕文">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200619133937709.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center">
 
 
 
@@ -116,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/理论知识/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/01/JS中的堆和栈及内存泄漏/"/>
 
 
 
 
 
-  <title>分类: 理论知识 | 指尖艺术家の博客</title>
+  <title>JS中的堆和栈及内存泄漏 | 指尖艺术家の博客</title>
   
 
 
@@ -141,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,111 +277,226 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>理论知识<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/01/JS%E4%B8%AD%E7%9A%84%E5%A0%86%E5%92%8C%E6%A0%88%E5%8F%8A%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="邹裕文">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="指尖艺术家の博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/06/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
-              
-                <span itemprop="name">正则表达式</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JS中的堆和栈及内存泄漏</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-06-12T15:12:09+08:00"
-              content="2020-06-12" >
-          06-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-01T10:10:09+08:00">
+                2020-05-01
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">理论知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/05/01/JS%E4%B8%AD%E7%9A%84%E5%A0%86%E5%92%8C%E6%A0%88%E5%8F%8A%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" itemprop="url">
-              
-                <span itemprop="name">JS中的堆和栈及内存泄漏</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-05-01T10:10:09+08:00"
-              content="2020-05-01" >
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/03/21/%E9%80%92%E5%BD%92/" itemprop="url">
-              
-                <span itemprop="name">递归</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-03-21T09:12:09+08:00"
-              content="2020-03-21" >
-          03-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+        <h2 id="JS中的堆和栈及内存泄漏"><a href="#JS中的堆和栈及内存泄漏" class="headerlink" title="JS中的堆和栈及内存泄漏"></a>JS中的堆和栈及内存泄漏</h2><h4 id="一、栈"><a href="#一、栈" class="headerlink" title="一、栈"></a>一、栈</h4><blockquote>
+<p>从电脑内存中分配一块出来，用来执行代码的内存，Stack<br>先创建变量，再做赋值操作分配一个主线程来自上而下执行。（js单线程，浏览器多线程）主要用来运行代码，和存储基本类型。</p>
+</blockquote>
+<p><strong>1.基本数据类型储存</strong></p>
+<blockquote>
+<ol>
+<li>变量存储空间，存创建的变量  </li>
+<li>值存储空间，存基本数据类型的值</li>
+<li>一个值存储空间可以对应多个变量，<br>一个变量只能对应一个值存储空间。</li>
+</ol>
+</blockquote>
+<p> <strong>2.说明</strong><br> 栈内存：是一个执行代码的一个空间，这个调用栈只有一个，并且大小固定，按照一定的排列规则自上而下，顺序执行。通俗点说就是先进后出</p>
+<p><strong>3.堆栈溢出</strong><br>溢出：因为栈内存空间有限，当你执行一些递归操作没有阻断或者释放的时候，反复调用，栈内存执行序列就会排不下了。</p>
+<h4 id="二、堆"><a href="#二、堆" class="headerlink" title="二、堆"></a>二、堆</h4><blockquote>
+<ol>
+<li>从内存中有拿出来一块，用来存引用数据类型<br>   Heap，一个16进制的地址。</li>
+<li>按照键、值分别存放，并关联起来</li>
+</ol>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200619133937709.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>引用数据类型存储</strong><br>堆内存不是有个地址么，放到栈内存的值存储空间，并和变量关联</p>
+<h4 id="三、深拷贝和浅拷贝"><a href="#三、深拷贝和浅拷贝" class="headerlink" title="三、深拷贝和浅拷贝"></a>三、深拷贝和浅拷贝</h4><p>简单的说，浅拷贝就是只将对象 最外层 的键值复制为一个新的对象，而深拷贝则会 递归复制所有的层 ，直到该键的值为基本类型值。 再简单点说 ，经过浅拷贝后，新旧变量可能还会有所关联（既然说了是可能还有所关联，那也可能毫无关联吧，这里的关键就在于原对象的复杂程度了）；而经过深拷贝后，理论上，新旧变量再无关联。 注意 ，在进行深拷贝时，层级不宜过多。所以，一般的深拷贝也并不是绝对毫无关联的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">a: <span class="string">"a is a"</span>,</span><br><span class="line">arr: [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">&#125;, obj1 = &#123; ...obj &#125;, <span class="comment">//假装这里是个浅拷贝</span></span><br><span class="line">obj2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj)); <span class="comment">//假装这里是深拷贝。</span></span><br><span class="line">obj1.a = <span class="string">"value a"</span>;</span><br><span class="line">obj1.arr[<span class="number">0</span>] = <span class="number">66</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200619134027276.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>可以看到，当原对象的值为 基本类型值 时，浅拷贝和深拷贝并没有区别；而当原对象的某些值为 引用类型值 时，如果修改变量的值，浅拷贝会改变原对象的值，而深拷贝则不会。</p>
+<h4 id="四、垃圾回收"><a href="#四、垃圾回收" class="headerlink" title="四、垃圾回收"></a>四、垃圾回收</h4><p>现在浏览器基本都在使用标记-清除的算法来执行垃圾回收。而不是使用引用计数的方式，因为引用计数方式无法释放循环引用结构的内存占用。 标记清除算法的核型概念是：从根部（在JS中就是全局对象）出发定时扫描内存中的对象。凡是能从根部到达的对象，都是还需要使用的。那些无法由根部出发触及到的对象被标记为不再使用，稍后进行回收。</p>
+<h4 id="五、内存泄露"><a href="#五、内存泄露" class="headerlink" title="五、内存泄露"></a>五、内存泄露</h4><blockquote>
+<p>对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。 对于不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）</p>
+</blockquote>
+<h6 id="常见的内存泄露"><a href="#常见的内存泄露" class="headerlink" title="常见的内存泄露"></a>常见的内存泄露</h6><pre><code>1. 不合理的计时器
+2. 被共享的闭包作用域
+3. 脱离dom引用
+4. 意外的全局变量</code></pre>
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+    <div> 
+        
+         <div> 
+        
+            <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div> 
+        
+</div> 
+       
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/21/%E9%80%92%E5%BD%92/" rel="next" title="递归">
+                <i class="fa fa-chevron-left"></i> 递归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="正则表达式">
+                正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -381,6 +504,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -403,8 +530,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -491,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS中的堆和栈及内存泄漏"><span class="nav-text">JS中的堆和栈及内存泄漏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、栈"><span class="nav-text">一、栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、堆"><span class="nav-text">二、堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、深拷贝和浅拷贝"><span class="nav-text">三、深拷贝和浅拷贝</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、垃圾回收"><span class="nav-text">四、垃圾回收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、内存泄露"><span class="nav-text">五、内存泄露</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常见的内存泄露"><span class="nav-text">常见的内存泄露</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -624,6 +776,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

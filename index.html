@@ -85,7 +85,7 @@
 <meta property="og:title" content="指尖艺术家の博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="指尖艺术家の博客">
-<meta property="article:author" content="Zouyw">
+<meta property="article:author" content="邹裕文">
 <meta name="twitter:card" content="summary">
 
 
@@ -287,7 +287,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zouyw">
+      <meta itemprop="name" content="邹裕文">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/tu.jpg">
     </span>
@@ -435,10 +435,10 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/09/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/01/JS%E4%B8%AD%E7%9A%84%E5%A0%86%E5%92%8C%E6%A0%88%E5%8F%8A%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zouyw">
+      <meta itemprop="name" content="邹裕文">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/tu.jpg">
     </span>
@@ -454,7 +454,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/09/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2020/05/01/JS%E4%B8%AD%E7%9A%84%E5%A0%86%E5%92%8C%E6%A0%88%E5%8F%8A%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" itemprop="url">JS中的堆和栈及内存泄漏</a></h1>
         
 
         <div class="post-meta">
@@ -466,8 +466,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-09T10:51:25+08:00">
-                2020-06-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-01T10:10:09+08:00">
+                2020-05-01
               </time>
             
 
@@ -476,6 +476,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">理论知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -508,11 +530,176 @@
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          JS中的堆和栈及内存泄漏一、栈
+从电脑内存中分配一块出来，用来执行代码的内存，Stack先创建变量，再做赋值操作分配一个主线程来自上而下执行。（js单线程，浏览器多线程）主要用来运行代码，和存储基本类型。
+
+1.基本数据类型储存
+
+
+变量存储空间，存创建的变量  
+值存储空间，存基本数据类型的值
+一
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/06/09/hello-world/#more" rel="contents">
+            <a class="btn" href="/2020/05/01/JS%E4%B8%AD%E7%9A%84%E5%A0%86%E5%92%8C%E6%A0%88%E5%8F%8A%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    <div> 
+        
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/%E9%80%92%E5%BD%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="邹裕文">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="指尖艺术家の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/21/%E9%80%92%E5%BD%92/" itemprop="url">递归</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T09:12:09+08:00">
+                2020-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">理论知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+
+      
+        
+          
+          认识递归一.递归：   满足以下三个条件就是递归
+                   1.函数自己调用自己
+                   2.一般情况下有参数
+                   3.一般情况下有return
+ 【注】递归能解决循环能干的所有事，有一些循环不容易干的，递归
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/21/%E9%80%92%E5%BD%92/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -592,9 +779,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/tu.jpg"
-                alt="Zouyw" />
+                alt="邹裕文" />
             
-              <p class="site-author-name" itemprop="name">Zouyw</p>
+              <p class="site-author-name" itemprop="name">邹裕文</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -605,7 +792,7 @@
               
                 <a href="/archives/%7C%7C%20%E5%BD%92%E6%A1%A3">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
