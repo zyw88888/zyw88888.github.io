@@ -48,6 +48,32 @@
       </tags>
   </entry>
   <entry>
+    <title>递归</title>
+    <url>/2020/03/21/%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h1 id="认识递归"><a href="#认识递归" class="headerlink" title="认识递归"></a>认识递归</h1><h2 id="一-递归："><a href="#一-递归：" class="headerlink" title="一.递归："></a>一.递归：</h2><pre><code>   满足以下三个条件就是递归
+                   1.函数自己调用自己
+                   2.一般情况下有参数
+                   3.一般情况下有return
+ 【注】递归能解决循环能干的所有事，有一些循环不容易干的，递归也能轻松做到。
+      归的代码可以写出来，但可读性不高，不容易理解递归过程。
+
+递归的方法
+            1.首先找到临界值，即无需计算获得的值。
+            2.找到这次与上一次的关系
+            3.假设当前函数可以使用，调用自身计算上一次。
+直接上代码
+     计算1~n的和？</code></pre><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">n</span>) </span>&#123;             </span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> sum(n - <span class="number">1</span>) + n;  <span class="comment">// 找得求和规律为 sum（99）+100 =sum（100）  </span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(sum(<span class="number">100</span>));  <span class="comment">//计算1~100的值为5050</span></span><br></pre></td></tr></table></figure>
+
+<p>  递归sum（n）到sum（1）没算到临界值前计算机会开全部内存来计算每一个公式，当计算到临界值计算机又会依次释放掉内存。<br>  【注意】当数值十分巨大时；计算机一瞬间开大量内存，容易死机，这也是此方法的弊端。大部分公司会禁止使用递归。</p>
+]]></content>
+      <categories>
+        <category>理论知识</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS中的堆和栈及内存泄漏</title>
     <url>/2020/05/01/JS%E4%B8%AD%E7%9A%84%E5%A0%86%E5%92%8C%E6%A0%88%E5%8F%8A%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/</url>
     <content><![CDATA[<h2 id="JS中的堆和栈及内存泄漏"><a href="#JS中的堆和栈及内存泄漏" class="headerlink" title="JS中的堆和栈及内存泄漏"></a>JS中的堆和栈及内存泄漏</h2><h4 id="一、栈"><a href="#一、栈" class="headerlink" title="一、栈"></a>一、栈</h4><blockquote>
@@ -89,29 +115,11 @@
       </tags>
   </entry>
   <entry>
-    <title>递归</title>
-    <url>/2020/03/21/%E9%80%92%E5%BD%92/</url>
-    <content><![CDATA[<h1 id="认识递归"><a href="#认识递归" class="headerlink" title="认识递归"></a>认识递归</h1><h2 id="一-递归："><a href="#一-递归：" class="headerlink" title="一.递归："></a>一.递归：</h2><pre><code>   满足以下三个条件就是递归
-                   1.函数自己调用自己
-                   2.一般情况下有参数
-                   3.一般情况下有return
- 【注】递归能解决循环能干的所有事，有一些循环不容易干的，递归也能轻松做到。
-      归的代码可以写出来，但可读性不高，不容易理解递归过程。
-
-递归的方法
-            1.首先找到临界值，即无需计算获得的值。
-            2.找到这次与上一次的关系
-            3.假设当前函数可以使用，调用自身计算上一次。
-直接上代码
-     计算1~n的和？</code></pre><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">n</span>) </span>&#123;             </span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> sum(n - <span class="number">1</span>) + n;  <span class="comment">// 找得求和规律为 sum（99）+100 =sum（100）  </span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(sum(<span class="number">100</span>));  <span class="comment">//计算1~100的值为5050</span></span><br></pre></td></tr></table></figure>
-
-<p>  递归sum（n）到sum（1）没算到临界值前计算机会开全部内存来计算每一个公式，当计算到临界值计算机又会依次释放掉内存。<br>  【注意】当数值十分巨大时；计算机一瞬间开大量内存，容易死机，这也是此方法的弊端。大部分公司会禁止使用递归。</p>
+    <title>大学毕业设计</title>
+    <url>/2021/06/01/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[<p>   本设计以单片机STC89C52作为密码锁监控装置的检测和控制核心，采用矩阵键盘输入的电子密码和指纹密码解锁两种解锁方式。系统采用LCD12864液晶显示屏实时更新显示信息，并设有修改密码功能，在解锁或修改密码时如果在未确定时发现自己按错了可以进行退格或重输的操作，如果发现旁边有人看着或者不想输入密码了可以进行退出输入的操作，从一定程度上将确保安全性。测试结果表明，本系统各项功能已达到本设计的所有要求。</p>
+<p>PCB电路图<br><img src="https://img-blog.csdnimg.cn/20210601104625872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<pre><code>系统识别存储指纹信息，可通过验证过的指纹进行快速解锁。</code></pre><p>(1)系统设置6位密码，密码通过键盘输入，若密码正确，则继电器断开（锁打开）。若密码错误，蜂鸣器报警提示。<br>(2)密码可通过按键重新设置，在设置前必须输入旧密码然后连续输入两次新密码，若输入旧密码时输错便直接退出修改密码。<br>(3)密码具有掉电保护功能，锁定后在此解除锁定的时间也具有掉电保护的功能。这样就可以防止外人或小偷输错密码后拔掉电源后再次插上电重新输入密码。<br>(4)在密码输入或重置时可退格、重输、退出输入等等操作。<br><img src="https://img-blog.csdnimg.cn/20210601104127504.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center" alt="成品图"><br>       对于这次设计来说既是一次机遇，又是一次挑战。在这次的设计过程中，本人学到了很多东西，通过自己的实践，增强了动手能力。通过实际工程的设计也使我了解到书本知识和实际应用的差别。在实际应用中遇到很多的问题，这都需要我对问题进行具体的分析，并一步一步地去解决它。更多详细细节编写在毕业论文里。</p>
 ]]></content>
-      <categories>
-        <category>理论知识</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-      </tags>
   </entry>
 </search>

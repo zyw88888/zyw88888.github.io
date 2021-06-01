@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-14T07:16:27.100Z</updated>
+  <updated>2021-06-01T02:54:15.003Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大学毕业设计</title>
+    <link href="http://yoursite.com/2021/06/01/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://yoursite.com/2021/06/01/%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</id>
+    <published>2021-06-01T02:55:08.028Z</published>
+    <updated>2021-06-01T02:54:15.003Z</updated>
+    
+    <content type="html"><![CDATA[<p>   本设计以单片机STC89C52作为密码锁监控装置的检测和控制核心，采用矩阵键盘输入的电子密码和指纹密码解锁两种解锁方式。系统采用LCD12864液晶显示屏实时更新显示信息，并设有修改密码功能，在解锁或修改密码时如果在未确定时发现自己按错了可以进行退格或重输的操作，如果发现旁边有人看着或者不想输入密码了可以进行退出输入的操作，从一定程度上将确保安全性。测试结果表明，本系统各项功能已达到本设计的所有要求。</p><p>PCB电路图<br><img src="https://img-blog.csdnimg.cn/20210601104625872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><pre><code>系统识别存储指纹信息，可通过验证过的指纹进行快速解锁。</code></pre><p>(1)系统设置6位密码，密码通过键盘输入，若密码正确，则继电器断开（锁打开）。若密码错误，蜂鸣器报警提示。<br>(2)密码可通过按键重新设置，在设置前必须输入旧密码然后连续输入两次新密码，若输入旧密码时输错便直接退出修改密码。<br>(3)密码具有掉电保护功能，锁定后在此解除锁定的时间也具有掉电保护的功能。这样就可以防止外人或小偷输错密码后拔掉电源后再次插上电重新输入密码。<br>(4)在密码输入或重置时可退格、重输、退出输入等等操作。<br><img src="https://img-blog.csdnimg.cn/20210601104127504.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ2MTUyMzE2,size_16,color_FFFFFF,t_70#pic_center" alt="成品图"><br>       对于这次设计来说既是一次机遇，又是一次挑战。在这次的设计过程中，本人学到了很多东西，通过自己的实践，增强了动手能力。通过实际工程的设计也使我了解到书本知识和实际应用的差别。在实际应用中遇到很多的问题，这都需要我对问题进行具体的分析，并一步一步地去解决它。更多详细细节编写在毕业论文里。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;   本设计以单片机STC89C52作为密码锁监控装置的检测和控制核心，采用矩阵键盘输入的电子密码和指纹密码解锁两种解锁方式。系统采用LCD12864液晶显示屏实时更新显示信息，并设有修改密码功能，在解锁或修改密码时如果在未确定时发现自己按错了可以进行退格或重输的操作，如果
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>正则表达式</title>
